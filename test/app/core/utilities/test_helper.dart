@@ -3,7 +3,7 @@ import 'package:cloudwalk_assessment/app/data/datasources/remote_datasource.dart
 import 'package:cloudwalk_assessment/app/data/repositories/repository_impl.dart';
 import 'package:cloudwalk_assessment/app/domain/entities/image_entity.dart';
 import 'package:cloudwalk_assessment/app/domain/repositories/repository.dart';
-import 'package:cloudwalk_assessment/app/domain/usecases/images_usecase.dart';
+import 'package:cloudwalk_assessment/app/domain/usecases/get_images_usecase.dart';
 import 'package:cloudwalk_assessment/app/presentation/cubits/images_cubit.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/services.dart';

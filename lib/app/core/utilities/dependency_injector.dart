@@ -9,7 +9,7 @@ import 'package:http/http.dart' as http;
 import '../../data/datasources/remote_datasource.dart';
 import '../../data/repositories/repository_impl.dart';
 import '../../domain/repositories/repository.dart';
-import '../../domain/usecases/images_usecase.dart';
+import '../../domain/usecases/get_images_usecase.dart';
 import '../../presentation/cubits/images_cubit.dart';
 
 final sl = GetIt.instance; // the service locator(sl)

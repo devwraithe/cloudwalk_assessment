@@ -1,10 +1,10 @@
 import 'package:cloudwalk_assessment/app/domain/usecases/get_cached_images_usecase.dart';
-import 'package:cloudwalk_assessment/app/domain/usecases/images_usecase.dart';
 import 'package:cloudwalk_assessment/app/domain/usecases/update_local_db_usecase.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../domain/usecases/get_images_usecase.dart';
 import 'images_states.dart';
 
 class ImagesCubit extends Cubit<ImagesStates> {

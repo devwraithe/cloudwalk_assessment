@@ -20,7 +20,7 @@ import 'package:cloudwalk_assessment/app/domain/entities/image_entity.dart'
     as _i16;
 import 'package:cloudwalk_assessment/app/domain/repositories/repository.dart'
     as _i4;
-import 'package:cloudwalk_assessment/app/domain/usecases/images_usecase.dart'
+import 'package:cloudwalk_assessment/app/domain/usecases/get_images_usecase.dart'
     as _i14;
 import 'package:cloudwalk_assessment/app/presentation/cubits/images_cubit.dart'
     as _i11;
@@ -354,22 +354,24 @@ class MockRepository extends _i1.Mock implements _i4.Repository {
   }
 
   @override
-  _i12.Future<_i5.Either<_i15.Failure, List<_i16.ImageEntity>>>
-      getImagesRepo() => (super.noSuchMethod(
-            Invocation.method(
-              #getImagesRepo,
-              [],
-            ),
-            returnValue: _i12
-                .Future<_i5.Either<_i15.Failure, List<_i16.ImageEntity>>>.value(
+  _i12.Future<
+      _i5
+          .Either<_i15.Failure, List<_i16.ImageEntity>>> getImagesRepo() =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getImagesRepo,
+          [],
+        ),
+        returnValue:
+            _i12.Future<_i5.Either<_i15.Failure, List<_i16.ImageEntity>>>.value(
                 _FakeEither_3<_i15.Failure, List<_i16.ImageEntity>>(
-              this,
-              Invocation.method(
-                #getImagesRepo,
-                [],
-              ),
-            )),
-          ) as _i12.Future<_i5.Either<_i15.Failure, List<_i16.ImageEntity>>>);
+          this,
+          Invocation.method(
+            #getImagesRepo,
+            [],
+          ),
+        )),
+      ) as _i12.Future<_i5.Either<_i15.Failure, List<_i16.ImageEntity>>>);
   @override
   _i12.Future<void> updateLocalDatabase(List<_i16.ImageEntity>? images) =>
       (super.noSuchMethod(
@@ -416,22 +418,24 @@ class MockRepositoryImpl extends _i1.Mock implements _i17.RepositoryImpl {
         ),
       ) as _i7.LocalDataSource);
   @override
-  _i12.Future<_i5.Either<_i15.Failure, List<_i16.ImageEntity>>>
-      getImagesRepo() => (super.noSuchMethod(
-            Invocation.method(
-              #getImagesRepo,
-              [],
-            ),
-            returnValue: _i12
-                .Future<_i5.Either<_i15.Failure, List<_i16.ImageEntity>>>.value(
+  _i12.Future<
+      _i5
+          .Either<_i15.Failure, List<_i16.ImageEntity>>> getImagesRepo() =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getImagesRepo,
+          [],
+        ),
+        returnValue:
+            _i12.Future<_i5.Either<_i15.Failure, List<_i16.ImageEntity>>>.value(
                 _FakeEither_3<_i15.Failure, List<_i16.ImageEntity>>(
-              this,
-              Invocation.method(
-                #getImagesRepo,
-                [],
-              ),
-            )),
-          ) as _i12.Future<_i5.Either<_i15.Failure, List<_i16.ImageEntity>>>);
+          this,
+          Invocation.method(
+            #getImagesRepo,
+            [],
+          ),
+        )),
+      ) as _i12.Future<_i5.Either<_i15.Failure, List<_i16.ImageEntity>>>);
   @override
   _i12.Future<void> updateLocalDatabase(List<_i16.ImageEntity>? images) =>
       (super.noSuchMethod(
