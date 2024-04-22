@@ -1,6 +1,8 @@
 import 'package:cloudwalk_assessment/app/core/utilities/errors/failure.dart';
 import 'package:cloudwalk_assessment/app/domain/entities/image_entity.dart';
+import 'package:cloudwalk_assessment/app/domain/usecases/get_cached_images_usecase.dart';
 import 'package:cloudwalk_assessment/app/domain/usecases/get_images_usecase.dart';
+import 'package:cloudwalk_assessment/app/domain/usecases/update_local_db_usecase.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
@@ -9,12 +11,16 @@ import '../../core/utilities/test_helper.mocks.dart';
 
 void main() {
   late ImagesUsecase usecase;
+  late GetCachedImagesUsecase getCachedImagesUsecase;
+  late UpdateLocalDbUsecase updateLocalDbUsecase;
   late MockRepository mockRepository;
 
   // set up the test environment by creating a mock repository instance
   setUp(() {
     mockRepository = MockRepository();
     usecase = ImagesUsecase(mockRepository);
+    getCachedImagesUsecase = GetCachedImagesUsecase(mockRepository);
+    updateLocalDbUsecase = UpdateLocalDbUsecase(mockRepository);
   });
 
   // define a list of mock ImageEntity objects for testing
@@ -79,7 +85,7 @@ void main() {
   // test case: should update the local database with given images
   test('should update the local database with given images', () async {
     // call the use case's updateLocalDatabase method with the mock images
-    await usecase.updateLocalDatabase(mockImages);
+    await updateLocalDbUsecase.updateLocalDatabase(mockImages);
 
     // verify that the repository's updateLocalDatabase method is called once
     verify(mockRepository.updateLocalDatabase(mockImages)).called(1);
@@ -96,7 +102,7 @@ void main() {
     );
 
     // call the use case's getCachedImages method and store the result
-    final result = await usecase.getCachedImages();
+    final result = await getCachedImagesUsecase.getCachedImages();
 
     // verify that the result is equal to the mock images
     expect(result, equals(mockImages));

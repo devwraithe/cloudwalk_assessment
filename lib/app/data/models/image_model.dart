@@ -1,22 +1,23 @@
+import 'package:cloudwalk_assessment/app/core/utilities/constants.dart';
 import 'package:cloudwalk_assessment/app/domain/entities/image_entity.dart';
 import 'package:equatable/equatable.dart';
 
 class ImageModel extends Equatable {
-  final String title, date, explanation, imgUrl;
+  final String? title, date, explanation, imgUrl;
 
   const ImageModel({
-    required this.title,
-    required this.date,
-    required this.explanation,
-    required this.imgUrl,
+    this.title,
+    this.date,
+    this.explanation,
+    this.imgUrl,
   });
 
   factory ImageModel.fromJson(Map<String, dynamic> json) {
     return ImageModel(
-      title: json['title'],
-      date: json['date'],
-      explanation: json['explanation'],
-      imgUrl: json['hdurl'],
+      title: json['title'] ?? "",
+      date: json['date'] ?? "",
+      explanation: json['explanation'] ?? "",
+      imgUrl: json['hdurl'] ?? Constants.backupImage,
     );
   }
 
@@ -30,5 +31,10 @@ class ImageModel extends Equatable {
   }
 
   @override
-  List<Object> get props => [title, date, explanation, imgUrl];
+  List<Object> get props => [
+        title!,
+        date!,
+        explanation!,
+        imgUrl!,
+      ];
 }

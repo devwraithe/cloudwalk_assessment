@@ -26,7 +26,7 @@ void main() {
     // verify that the dependencies are registered correctly
     expect(sl.isRegistered<ImagesCubit>(), isTrue);
     expect(sl.isRegistered<Connectivity>(), isTrue);
-    expect(sl.isRegistered<GetImagesUsecase>(), isTrue);
+    expect(sl.isRegistered<ImagesUsecase>(), isTrue);
     expect(sl.isRegistered<Repository>(), isTrue);
     expect(sl.isRegistered<RemoteDataSource>(), isTrue);
     expect(sl.isRegistered<LocalDataSource>(), isTrue);
@@ -36,7 +36,7 @@ void main() {
     // verify the types of the registered dependencies
     expect(sl<ImagesCubit>(), isA<ImagesCubit>());
     expect(sl<Connectivity>(), isA<Connectivity>());
-    expect(sl<GetImagesUsecase>(), isA<GetImagesUsecase>());
+    expect(sl<ImagesUsecase>(), isA<ImagesUsecase>());
     expect(sl<Repository>(), isA<Repository>());
     expect(sl<RemoteDataSource>(), isA<RemoteDataSource>());
     expect(sl<LocalDataSource>(), isA<LocalDataSource>());

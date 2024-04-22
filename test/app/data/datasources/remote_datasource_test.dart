@@ -124,7 +124,7 @@ void main() {
     expect(
       dataSource.getImages(),
       throwsA(
-        isA<NetworkException>(),
+        isA<RequestTimeoutException>(),
       ),
     );
   });

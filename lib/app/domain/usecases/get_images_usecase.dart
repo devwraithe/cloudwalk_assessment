@@ -4,23 +4,15 @@ import 'package:dartz/dartz.dart';
 import '../../core/utilities/errors/failure.dart';
 import '../entities/image_entity.dart';
 
-class GetImagesUsecase {
+class ImagesUsecase {
   final Repository repo;
-  GetImagesUsecase(this.repo);
+  ImagesUsecase(this.repo);
 
-  Future<Either<Failure, List<ImageEntity>>> execute() async {
+  Future<Either<Failure, List<ImageEntity>>> getImages() async {
     final result = await repo.getImagesRepo();
     return result.fold(
       (failure) => Left(failure),
       (images) => Right(images),
     );
   }
-
-  // Future<void> updateLocalDatabase(List<ImageEntity> images) async {
-  //   return await repo.updateLocalDatabase(images);
-  // }
-  //
-  // Future<List<ImageEntity>> getCachedImages() async {
-  //   return await repo.getCachedImages();
-  // }
 }

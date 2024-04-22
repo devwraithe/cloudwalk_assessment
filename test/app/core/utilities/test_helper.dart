@@ -13,7 +13,7 @@ import 'package:mockito/annotations.dart';
 
 @GenerateMocks([
   ImagesCubit,
-  GetImagesUsecase,
+  ImagesUsecase,
   Repository,
   RepositoryImpl,
   RemoteDataSource,

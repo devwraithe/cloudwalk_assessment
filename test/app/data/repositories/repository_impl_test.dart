@@ -1,6 +1,3 @@
-import 'dart:async';
-import 'dart:io';
-
 import 'package:cloudwalk_assessment/app/core/utilities/constants.dart';
 import 'package:cloudwalk_assessment/app/core/utilities/errors/exceptions.dart';
 import 'package:cloudwalk_assessment/app/core/utilities/errors/failure.dart';
@@ -103,7 +100,7 @@ void main() {
   test('should return a Failure on SocketException', () async {
     // set up the behavior of the mock remote data source to throw a socket exception
     when(mockRemoteDataSource.getImages()).thenThrow(
-      SocketException(Constants.socketError),
+      NetworkException(Failure(Constants.socketError)),
     );
 
     // call the repository method and get the result
@@ -122,7 +119,7 @@ void main() {
   test('should return a Failure on TimeoutException', () async {
     // set up the behavior of the mock remote data source to throw a timeout exception
     when(mockRemoteDataSource.getImages()).thenThrow(
-      TimeoutException(Constants.timeout),
+      RequestTimeoutException(Failure(Constants.timeout)),
     );
 
     // call the repository method and get the result

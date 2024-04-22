@@ -27,9 +27,9 @@ class UiHelpers {
   // image card for lists
   static imageCard(ImageEntity image, BuildContext context) {
     return ImageCard(
-      title: image.title,
-      date: Helpers.formatDate(image.date),
-      image: image.imgUrl,
+      title: image.title!,
+      date: Helpers.formatDate(image.date!),
+      image: image.imgUrl!,
       onTap: () => Navigator.pushNamed(
         context,
         Routes.detail,

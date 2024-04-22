@@ -26,13 +26,10 @@ void init() {
   // can have a separate method as app scales
   regSingleton(() => ImagesCubit(sl(), sl(), sl(), sl()));
   regSingleton<Connectivity>(() => Connectivity());
-
-  regSingleton(() => GetImagesUsecase(sl()));
-  regSingleton(() => GetCachedImagesUsecase(sl()));
+  regSingleton(() => ImagesUsecase(sl()));
   regSingleton(() => UpdateLocalDbUsecase(sl()));
-
+  regSingleton(() => GetCachedImagesUsecase(sl()));
   regSingleton<Repository>(() => RepositoryImpl(sl(), sl()));
-
   regSingleton<RemoteDataSource>(() => RemoteDataSourceImpl(sl()));
 
   // local data source
