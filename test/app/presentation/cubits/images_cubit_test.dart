@@ -1,6 +1,8 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:cloudwalk_assessment/app/core/utilities/errors/failure.dart';
 import 'package:cloudwalk_assessment/app/domain/entities/image_entity.dart';
+import 'package:cloudwalk_assessment/app/domain/usecases/get_cached_images_usecase.dart';
+import 'package:cloudwalk_assessment/app/domain/usecases/update_local_db_usecase.dart';
 import 'package:cloudwalk_assessment/app/presentation/cubits/images_cubit.dart';
 import 'package:cloudwalk_assessment/app/presentation/cubits/images_states.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
@@ -10,17 +12,31 @@ import 'package:mockito/mockito.dart';
 
 import '../../core/utilities/test_helper.mocks.dart';
 
+class MockGetCachedImagesUsecase extends Mock
+    implements GetCachedImagesUsecase {}
+
+class MockUpdateLocalDBUsecase extends Mock implements UpdateLocalDbUsecase {}
+
 void main() {
   // create instances of necessary dependencies and the cubit under test
   late ImagesCubit imagesCubit;
   late MockImagesUsecase mockImagesUsecase;
+  late MockGetCachedImagesUsecase mockGetCachedImagesUsecase;
+  late MockUpdateLocalDBUsecase mockUpdateLocalDBUsecase;
   late MockConnectivity mockConnectivity;
 
   setUp(() {
     // set up the necessary dependencies and the cubit instance
     mockImagesUsecase = MockImagesUsecase();
+    mockGetCachedImagesUsecase = MockGetCachedImagesUsecase();
+    mockUpdateLocalDBUsecase = MockUpdateLocalDBUsecase();
     mockConnectivity = MockConnectivity();
-    imagesCubit = ImagesCubit(mockImagesUsecase, mockConnectivity);
+    imagesCubit = ImagesCubit(
+      mockImagesUsecase,
+      mockUpdateLocalDBUsecase,
+      mockGetCachedImagesUsecase,
+      mockConnectivity,
+    );
   });
 
   tearDown(() {

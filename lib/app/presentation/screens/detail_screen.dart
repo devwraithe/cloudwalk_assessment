@@ -30,9 +30,9 @@ class _DetailScreenState extends State<DetailScreen> {
             Stack(
               children: [
                 Hero(
-                  tag: image.title,
+                  tag: image.title!,
                   child: CachedNetworkImage(
-                    imageUrl: image.imgUrl,
+                    imageUrl: image.imgUrl!,
                     fit: BoxFit.cover,
                     height: 420.h,
                     width: double.infinity,
@@ -64,12 +64,12 @@ class _DetailScreenState extends State<DetailScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    image.title,
+                    image.title!,
                     style: textTheme.headlineMedium,
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    Helpers.formatDate(image.date),
+                    Helpers.formatDate(image.date!),
                     style: textTheme.bodyLarge?.copyWith(
                       color: AppColors.grey,
                       fontWeight: FontWeight.w500,
@@ -77,7 +77,7 @@ class _DetailScreenState extends State<DetailScreen> {
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    image.explanation,
+                    image.explanation!,
                     style: textTheme.bodyLarge?.copyWith(
                       height: 1.64,
                     ),

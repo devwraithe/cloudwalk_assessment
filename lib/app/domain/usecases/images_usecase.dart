@@ -15,12 +15,4 @@ class ImagesUsecase {
       (images) => Right(images),
     );
   }
-
-  Future<void> updateLocalDatabase(List<ImageEntity> images) async {
-    return await repo.updateLocalDatabase(images);
-  }
-
-  Future<List<ImageEntity>> getCachedImages() async {
-    return await repo.getCachedImages();
-  }
 }

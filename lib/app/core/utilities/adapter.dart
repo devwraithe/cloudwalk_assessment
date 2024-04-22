@@ -22,9 +22,9 @@ class ImageEntityAdapter extends TypeAdapter<ImageEntity> {
 
   @override
   void write(BinaryWriter writer, ImageEntity obj) {
-    writer.writeString(obj.title);
-    writer.writeString(obj.date);
-    writer.writeString(obj.imgUrl);
-    writer.writeString(obj.explanation);
+    writer.writeString(obj.title!);
+    writer.writeString(obj.date!);
+    writer.writeString(obj.imgUrl!);
+    writer.writeString(obj.explanation!);
   }
 }

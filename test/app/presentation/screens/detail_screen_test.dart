@@ -54,10 +54,10 @@ void main() {
     expect(find.byType(CachedNetworkImage), findsOneWidget);
 
     // verify the presence of image title
-    expect(find.text(image.title), findsOneWidget);
+    expect(find.text(image.title!), findsOneWidget);
 
     // verify the presence of image date
-    expect(find.text(image.explanation), findsOneWidget);
+    expect(find.text(image.explanation!), findsOneWidget);
 
     // verify the presence of 'Go Back' text
     expect(find.text('Go Back'), findsOneWidget);

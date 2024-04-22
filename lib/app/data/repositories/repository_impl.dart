@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:io';
 
 import 'package:cloudwalk_assessment/app/core/utilities/constants.dart';
 import 'package:cloudwalk_assessment/app/core/utilities/errors/exceptions.dart';
@@ -27,9 +26,9 @@ class RepositoryImpl implements Repository {
       return Right(images.map((image) => image.toEntity()).toList());
     } on ServerException catch (e) {
       return Left(e.failure);
-    } on SocketException {
+    } on NetworkException {
       return Left(Failure(Constants.lostConnection));
-    } on TimeoutException {
+    } on RequestTimeoutException {
       return Left(Failure(Constants.timeout));
     } catch (e) {
       return Left(Failure(e.toString()));

@@ -17,3 +17,10 @@ class NetworkException extends Equatable implements IOException {
   @override
   List<Object?> get props => [failure];
 }
+
+class RequestTimeoutException extends Equatable implements IOException {
+  final Failure failure;
+  const RequestTimeoutException(this.failure);
+  @override
+  List<Object?> get props => [failure];
+}
